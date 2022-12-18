@@ -1,0 +1,11 @@
+(font-family-list)
+(x-list-fonts "Inconsolata")
+(x-list-fonts "fixed")
+(x-list-fonts "fixed")
+echo {a..z}
+echo a..z
+echo {a..z}
+bash -c 'echo {a..z}'
+bash -c 'echo {a..z}' | tr -d ' '
+awk 'irand(26,1)'
+awk 'irand(1,1)'
