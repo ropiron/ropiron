@@ -17,10 +17,18 @@
 ;; GNU/Linuxにおけるフォントの設定（IncosolataとIPA exGothic）
 (when (eq system-type 'gnu/linux)
   ;; Fontの設定
-  (set-face-font 'default "Hack-15:bold")
+  (set-face-font 'default "Hack-16:bold")
   ;;(set-frame-font "Inconsolata-14")
   (set-fontset-font t 'japanese-jisx0208 (font-spec :family "IPAExGothic"))
   )
+
+;; anythingの設定
+(setq browse-url-mosaic-program nil)
+(add-to-list 'load-path "~/.emacs.d/elisp/anything")
+(require 'anything-config)
+(setq anything-enable-shortcuts 'prefix)
+(define-key anything-map (kbd "@") 'anything-select-with-prefix-shortcut)
+(global-set-key (kbd "C-x b") 'anything-mini)
 
 
 ;; Orgの設定
@@ -53,8 +61,16 @@
         (switch-to-buffer buffer)
         (message "%s" file))
     (find-file (concat "~/Documents/org-doc/" file))))
+
+
 (global-set-key (kbd "C-M-^") '(lambda () (interactive)
-                                 (show-org-buffer "notes.org")))
+                                 (show-org-buffer "memo.org")))
+
+
+(global-set-key (kbd "\C-ci") '(lambda () (interactive)
+                                 (find-file "~/.emacs.d/init.el")))
+
+
 ;;===========================================
 ;;  絶対必要な基本設定
 ;;===========================================
@@ -167,8 +183,8 @@
 ;; キーの入れ替えの例
 ;;----
 ;; global-set-keyはdefine-keyのラッパーなので、どっちを使ってもOK
-;; (define-key global-map (kbd "C-t") 'other-window)
-;; (global-set-key (kbd "") 'other-window)
+(define-key global-map (kbd "C-t") 'other-window)
+(global-set-key (kbd "") 'other-window)
 
 
 ;;----
@@ -230,3 +246,5 @@
 (setq-default mode-line-mule-info
               (cl-substitute '(:eval (my-buffer-coding-system-mnemonic))
                              "%z" mode-line-mule-info :test 'equal))
+;; OS起動後Org-captureを実行する。
+(org-capture)
