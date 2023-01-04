@@ -1,14 +1,9 @@
-(package-initialize)
-(setq package-archives
-      '(("gnu" . "http://elpa.gnu.org/packages/")
-        ("melpa" . "http://melpa.org/packages/")
-        ("org" . "http://orgmode.org/elpa/")))
 (require 'package)
-;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
 ;; and `package-pinned-packages`. Most users will not need or want to do this.
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-;;(package-initialize)
+(package-initialize)
 
 (require 'mozc)
 (load-library "mozc")
@@ -16,92 +11,6 @@
 (setq default-input-method "japanese-mozc")
 (global-set-key [zenkaku-hankaku] 'toggle-input-method)
 (prefer-coding-system 'utf-8)
-(add-to-list 'load-path "~/.emacs.d/elisp/mozc-el-extensions")
-
-(require 'mozc-im)
-(require 'mozc-popup)
-(require 'mozc-cursor-color)
-(require 'wdired)
-
-(setq default-input-method "japanese-mozc-im")
-(setq mozc-candidate-style 'popup)
-(setq mozc-cursor-color-alist '((direct        . "red")
-                                (read-only     . "yellow")
-                                (hiragana      . "green")
-                                (full-katakana . "goldenrod")
-                                (half-ascii    . "dark orchid")
-                                (full-ascii    . "orchid")
-                                (half-katakana . "dark goldenrod")))
-
-(blink-cursor-mode 0)
-
-(defun enable-input-method (&optional arg interactive)
-  (interactive "P\np")
-  (if (not current-input-method)
-      (toggle-input-method arg interactive)))
-
-(defun disable-input-method (&optional arg interactive)
-  (interactive "P\np")
-  (if current-input-method
-      (toggle-input-method arg interactive)))
-
-(defun isearch-enable-input-method ()
-  (interactive)
-  (if (not current-input-method)
-      (isearch-toggle-input-method)
-    (cl-letf (((symbol-function 'toggle-input-method)
-               (symbol-function 'ignore)))
-      (isearch-toggle-input-method))))
-
-(defun isearch-disable-input-method ()
-  (interactive)
-  (if current-input-method
-      (isearch-toggle-input-method)
-    (cl-letf (((symbol-function 'toggle-input-method)
-               (symbol-function 'ignore)))
-      (isearch-toggle-input-method))))
-
-(global-set-key (kbd "C-o") 'toggle-input-method)
-(define-key isearch-mode-map (kbd "C-o") 'isearch-toggle-input-method)
-(define-key wdired-mode-map (kbd "C-o") 'toggle-input-method)
-
-(global-set-key (kbd "C-<f1>") 'disable-input-method)
-(define-key isearch-mode-map (kbd "C-<f1>") 'isearch-disable-input-method)
-(define-key wdired-mode-map (kbd "C-<f1>") 'disable-input-method)
-
-;; (global-set-key (kbd "C-j") 'disable-input-method)
-;; (define-key isearch-mode-map (kbd "C-j") 'isearch-disable-input-method)
-;; (define-key wdired-mode-map (kbd "C-j") 'disable-input-method)
-
-(global-set-key (kbd "C-<f2>") 'enable-input-method)
-(define-key isearch-mode-map (kbd "C-<f2>") 'isearch-enable-input-method)
-(define-key wdired-mode-map (kbd "C-<f2>") 'enable-input-method)
-
-;; (global-set-key (kbd "C-o") 'enable-input-method)
-;; (define-key isearch-mode-map (kbd "C-o") 'isearch-enable-input-method)
-;; (define-key wdired-mode-map (kbd "C-o") 'enable-input-method)
-
-(defvar-local mozc-im-mode nil)
-(add-hook 'mozc-im-activate-hook (lambda () (setq mozc-im-mode t)))
-(add-hook 'mozc-im-deactivate-hook (lambda () (setq mozc-im-mode nil)))
-(advice-add 'mozc-cursor-color-update
-            :around (lambda (orig-fun &rest args)
-                      (let ((mozc-mode mozc-im-mode))
-                        (apply orig-fun args))))
-
-;; isearch
-(add-hook 'isearch-mode-hook (lambda () (setq im-state mozc-im-mode)))
-(add-hook 'isearch-mode-end-hook
-          (lambda ()
-            (unless (eq im-state mozc-im-mode)
-              (if im-state
-                  (activate-input-method default-input-method)
-                (deactivate-input-method)))))
-
-;; wdired IME Off
-(advice-add 'wdired-finish-edit
-            :after (lambda (&rest args)
-                     (deactivate-input-method)))
 
 ;; Windowsにおけるフォントの設定（Consolasとメイリオ）
 (when (eq system-type 'windows-nt)
@@ -121,14 +30,8 @@
   )
 
 ;; anythingの設定
-(setq
- browse-url-browser-function 'eww-browse-url ; Use eww as the default browser
- shr-use-fonts  nil                          ; No special fonts
- shr-use-colors nil                          ; No colours
- shr-indentation 2                           ; Left-side margin
- shr-width 70                                ; Fold text to 70 columns
- eww-search-prefix "https://wiby.me/?q=")    ; Use another engine for searching
 (setq browse-url-mosaic-program nil)
+(setq browse-url-browser-function 'eww-browse-url)
 (setq browse-url-galeon-program nil)
 (setq browse-url-netscape-program nil)
 
@@ -146,20 +49,20 @@
 
 (setq org-capture-templates
       '(
-	("i" "Idea" entry (file+headline "~/.emacs.d/org-dir/idea.org" "Idea")
+	("i" "Idea" entry (file+headline "~/Documents/org-doc/idea.org" "Idea")
 	 "* %? %U %i")
-	("r" "Remember" entry (file+headline "~/.emacs.d/org-dir/remember.org" "Remember")
+	("r" "Remember" entry (file+headline "~/Documents/org-doc/remember.org" "Remember")
 	 "* %? %U %i")
-	("m" "Memo" entry (file+headline "~/.emacs.d/org-dir/memo.org" "Memo")
+	("m" "Memo" entry (file+headline "~/Documents/org-doc/memo.org" "Memo")
 	 "* %? %U %i")
-	("t" "Task" entry (file+headline "~/.emacs.d/org-dir/task.org" "Task")
+	("t" "Task" entry (file+headline "~/Documents/org-doc/task.org" "Task")
 	 "** TODO %? \n   SCHEDULED: %^t \n")))
 
 (setq org-refile-targets
-      (quote (("~/.emacs.d/org-dir/archives.org" :level . 1)
-	      ("~/.emacs.d/org-dir/remember.org" :level . 1)
-	      ("~/.emacs.d/org-dir/memo.org" :level . 1)
-	      ("~/.emacs.d/org-dir/task.org" :level . 1))))
+      (quote (("~/Documents/org-doc/archives.org" :level . 1)
+	      ("~/Documents/org-doc/remember.org" :level . 1)
+	      ("~/Documents/org-doc/memo.org" :level . 1)
+	      ("~/Documents/org-doc/task.org" :level . 1))))
 
 (defun show-org-buffer (file)
   "Show an org-file FILE on the current buffer."
@@ -168,7 +71,7 @@
       (let ((buffer (get-buffer file)))
         (switch-to-buffer buffer)
         (message "%s" file))
-    (find-file (concat "~/.emacs.d/org-dir/" file))))
+    (find-file (concat "~/Documents/org-doc/" file))))
 
 
 (global-set-key (kbd "C-M-^") '(lambda () (interactive)
@@ -356,4 +259,4 @@
               (cl-substitute '(:eval (my-buffer-coding-system-mnemonic))
                              "%z" mode-line-mule-info :test 'equal))
 ;; OS起動後Org-captureを実行する。
-(org-capture)
+;;(org-capture)

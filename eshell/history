@@ -9,3 +9,5 @@ bash -c 'echo {a..z}'
 bash -c 'echo {a..z}' | tr -d ' '
 awk 'irand(26,1)'
 awk 'irand(1,1)'
+echo hello world
+echo "hello world"

@@ -3,8 +3,9 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
- (filename . "~/Documents/org-doc/memo.org")
- (front-context-string . "**  [2022-12-28 ")
- (rear-context-string . " IMEをオフにする\n*** \n")
- (position . 223))
+ (filename . "~/.emacs.d/org-dir/memo.org")
+ (front-context-string . "**  [2023-01-04 ")
+ (rear-context-string . "odeでDoingの項目を作る\n")
+ (position . 116)
+ (last-modified 25525 41859 604467 661000))
 )
