@@ -1,12 +1,20 @@
-* Hi there 👋
-
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
-
+* Hello, World! 👋
+- 🔭 I’m currently working on drainage problem solution.
+- 🌱 I’m currently learning
+  - Hydraulics
+  - Open Channel Flow
+  - CAE(Computer Aided Engineering)
+  - CFD(Computational Fluid Dynamics)
+  - OpenFOAM
+  - DualSPhysics
+  - Salome-meca
+  - Programming
+	- Bash
+	- Python
+	- PowerShell
+	- C++
+- 👯 I’m looking to collaborate on research project.
+- 🤔 I’m looking for help with CFD verification and validation.
+- 💬 Ask me about 3D-CFD.
+- 📫 How to reach me:
+  - E-mail me: hirothedon[at]tutanota.com
