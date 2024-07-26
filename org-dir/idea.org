@@ -3,4 +3,53 @@
 aaaa
 **  [2023-01-05 木 01:05] 
 *** 風呂場で読書
-*** 読書感想文をネットにアップロードする
+**  [2023-04-15 Sat 11:48] 
+
+
+#+begin_src
+(defun extract-string-from-file (file-name search-string)
+  "Extracts lines containing the specified search string from the given file."
+  (let ((result '()))
+    (with-temp-buffer
+      (insert-file-contents file-name)
+      (goto-char (point-min))
+      (while (re-search-forward search-string nil t)
+        (push (thing-at-point 'line t) result)))
+    (reverse result)))
+#+end_src
+
+#+begin_src emacs-lisp
+  (defun extract-string-from-file (file-name search-string)
+	"Extracts lines containing the specified search string from the given file."
+	(let ((result '()))
+	  (with-temp-buffer
+		(insert-file-contents file-name)
+		(goto-char (point-min))
+		(while (re-search-forward search-string nil t)
+		  (push (thing-at-point 'line t) result)))
+	  (setq lines (split-string (reverse result) "\n"))
+	  (dolist (line lines)
+		(message "%s" line))))
+#+end_src
+
+#+RESULTS:
+: extract-string-from-file
+**  [2023-04-15 Sat 15:29] 
+** マハラジャターリーセット
+- ラムサグ
+- ポークマサラ
+- マサラクルチャ
+- ナンの大を単品で追加
+- ビリヤニのシーフード
+**  [2023-12-29 Fri 21:22]
+当日ライブを楽しむには予習してほしいことがあります。
+1．メンバーの顔と名前をある程度覚える。
+私のおすすめ「ロロキルッ！」
+https://twitter.com/LoLo__kill
+
+2．曲を聞いておく
+https://music.youtube.com/search?q=%E3%83%AD%E3%83%AD%E3%82%AD%E3%83%AB%E3%83%83
+
+チケットは予約すると500円安くなります。チケットも安くはないので予約がおすすめ。
+https://tiget.net/events/287001
+最後にライブ後に特典会があるので、チェキ撮ってから帰りましょう！

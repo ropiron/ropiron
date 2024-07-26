@@ -1,13 +1,128 @@
-(font-family-list)
-(x-list-fonts "Inconsolata")
-(x-list-fonts "fixed")
-(x-list-fonts "fixed")
-echo {a..z}
-echo a..z
-echo {a..z}
-bash -c 'echo {a..z}'
-bash -c 'echo {a..z}' | tr -d ' '
-awk 'irand(26,1)'
-awk 'irand(1,1)'
-echo hello world
-echo "hello world"
+(extract-string-from-file "files.txt" "\\.exe$")
+cd ..
+cd 2
+ls
+cd img/
+ls
+(defun convert-jpeg-to-png (jpeg-file-name png-file-name)  "Converts a JPEG image to a PNG image."  (let ((image (create-image jpeg-file-name)))    (with-temp-buffer      (insert-image image)      (write-region (point-min) (point-max) png-file-name nil 'no-message))))
+(convert-jpeg-to-png "12_orange.jpg" "output.png")
+ls
+(defun convert-jpg-to-png (file)  "Convert a JPEG image to a PNG image."  (let* ((basename (file-name-base file))         (png-file (concat "/path/to/output/dir/" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))
+ls
+rm *.png
+ls
+ls
+ls
+ls
+ls
+cd ..
+ls
+cd ..
+cd 2
+ls
+cd img/
+(defun convert-jpg-to-png (file)  "Convert a JPEG image to a PNG image."  (let* ((basename (file-name-base file))         (png-file (concat "/path/to/output/dir/" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))
+(defun convert-jpg-to-png (file)  "Convert a JPEG image to a PNG image."  (let* ((basename (file-name-base file))         (png-file (concat "~/Documents/shellgei160/qdata/2/img" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))       (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))         (png-file (concat "/path/to/output/dir/" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))
+(defun convert-jpg-to-png (file)  "Convert a JPEG image to a PNG image."  (let* ((basename (file-name-base file))         (png-file (concat "~/Documents/shellgei160/qdata/2/img" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))       (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))         (png-file (concat "~/Documents/shellgei160/qdata/2/img" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))
+ls
+;s
+(defun convert-jpg-to-png (file)  "Convert a JPEG image to a PNG image."  (let* ((basename (file-name-base file))         (png-file (concat "~/Documents/shellgei160/qdata/2/img" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))       (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))         (png-file (concat "~/Documents/shellgei160/qdata/2/img" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))
+ls
+g
+dired
+(defun convert-jpg-to-png (file)  "Convert a JPEG image to a PNG image."  (let* ((basename (file-name-base file))         (png-file (concat "~/Documents/shellgei160/qdata/2/img" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))       (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))         (png-file (concat "~/Documents/shellgei160/qdata/2/img/" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))
+ls
+cd ..
+cd ..
+cd 2
+ls
+cd 2
+ls
+cd img/
+ls
+cat image_generator.bash 
+convert -size 1024x1024 xc:"${_color}" "${fname}"
+(defun convert-jpg-to-png (file)  "Convert a JPEG image to a PNG image."  (let* ((basename (file-name-base file))         (png-file (concat "~/Documents/shellgei160/qdata/2/img" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))       (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))         (png-file (concat "~/Documents/shellgei160/qdata/2/img/" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))
+ls
+(defun convert-jpg-to-png (file)  "Convert a JPEG image to a PNG image."  (let* ((basename (file-name-base file))         (png-file (concat "~/Documents/shellgei160/qdata/2/img" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))       (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))         (png-file (concat "~/Documents/shellgei160/qdata/2/img/" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))
+Symbol’s value as variable is void: file
+ls
+cd ..
+;s
+ls
+(defun convert-jpg-to-png (file)  "Convert a JPEG image to a PNG image."  (let* ((basename (file-name-base file))         (png-file (concat "~/Documents/shellgei160/qdata/2/img" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))       (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))         (png-file (concat "~/Documents/shellgei160/qdata/2/img/" basename ".png")))    (if (file-exists-p png-file)        (message "File %s already exists." png-file)      (shell-command (format "convert %s %s" file png-file))      (message "Converted %s to %s." file png-file))))(defun batch-convert-jpg-to-png (dir)  "Batch convert all JPEG images in DIR to PNG images."  (interactive "DInput directory: ")  (let ((files (directory-files dir t "\\.jpg$")))    (dolist (file files)      (convert-jpg-to-png file))))
+(defun batch-convert-jpeg-to-png (input-dir output-dir)  "Converts JPEG files in the input directory to PNG files in the output directory."  (dolist (file (directory-files input-dir t "\\.jpg$"))    (let ((new-file (concat output-dir "/" (file-name-base file) ".png")))      (shell-command-to-string (concat "convert " file " " new-file)))))
+(defun batch-convert-jpeg-to-png (input-dir output-dir)  "Converts JPEG files in the input directory to PNG files in the output directory."  (dolist (file (directory-files input-dir t "\\.jpg$"))    (let ((new-file (concat output-dir "/" (file-name-base file) ".png")))      (shell-command-to-string (concat "convert " file " " new-file)))))
+(batch-convert-jpeg-to-png "./" "./")
+ls
+rm *.png
+ls
+cd img/
+(batch-convert-jpeg-to-png "./" "./")
+ls
+ls
+cd ..
+ls
+cd ..
+ls
+cd 3
+ls
+ls
+mkdir lisp_code
+cd lisp_code/
+ls
+(let ((dir "~/Documents/shellgei160/qdata/3/lisp_code/"))  (dotimes (i 1000)    (write-region "" nil (concat dir "file_" (number-to-string i) ".txt"))))
+ls
+rm *.txt
+ls
+(let ((dir "~/Documents/shellgei160/qdata/3/lisp_code/"))  (dotimes (i 1000)    (write-region "" nil (concat dir (number-to-string i) ".txt"))))
+ls
+ls
+(let ((dir "/path/to/directory/"))  (dotimes (i 999)    (let ((num (format "%03d" (1+ i))))      (write-region "" nil (concat dir "file_" num ".txt"))      (rename-file (concat dir "file_" num ".txt") (concat dir "new_file_" num ".txt")))))
+(let ((dir "~/Documents/shellgei160/qdata/3/lisp_code/"))  (dotimes (i 999)    (let ((num (format "%03d" (1+ i))))      (write-region "" nil (concat dir "file_" num ".txt"))      (rename-file (concat dir "file_" num ".txt") (concat dir "new_file_" num ".txt")))))
+ls
+ls
+rm new*.txt
+ls
+ls
+(let ((dir "~/Documents/shellgei160/qdata/3/lisp_code/"))  (dotimes (i 999)    (let ((num (format "%03d" (1+ i))))      (write-region "" nil (concat dir  num ".txt"))      (rename-file (concat dir (number-to-string i) ".txt") (concat dir num ".txt")))))
+ls
+rm 001.txt 
+(let ((dir "~/Documents/shellgei160/qdata/3/lisp_code/"))  (dotimes (i 999)    (let ((num (format "%03d" (1+ i))))      (write-region "" nil (concat dir  num ".txt"))      (rename-file (concat dir (number-to-string i) ".txt") (concat dir num ".txt")))))
+ls
+(let ((dir "~/Documents/shellgei160/qdata/3/lisp_code/"))  (dotimes (i 999)    (let ((num (format "%03d" i)))      (write-region "" nil (concat dir  num ".txt"))      (rename-file (concat dir (number-to-string i) ".txt") (concat dir num ".txt")))))
+ls
+(let ((dir "~/Documents/shellgei160/qdata/3/lisp_code/"))  (dotimes (i 999)    (let ((num (format "%03d" i)))      (write-region "" nil (concat dir  num ".txt"))      (rename-file (concat dir (number-to-string i) ".txt") (concat dir num ".txt")))))
+ls
+(let ((dir "~/Documents/shellgei160/qdata/3/lisp_code/"))  (dotimes (i 999)    (let ((num (format "%04d" i)))      (write-region "" nil (concat dir  num ".txt"))      (rename-file (concat dir (number-to-string i) ".txt") (concat dir num ".txt")))))
+ls
+(let ((dir "~/Documents/shellgei160/qdata/3/lisp_code/"))  (dotimes (i 999)    (let ((num (format "%04d" i)))      (write-region "" nil (concat dir  num ".txt"))      (rename-file (concat dir i ".txt") (concat dir num ".txt")))))
+(let ((dir "~/Documents/shellgei160/qdata/3/lisp_code/"))  (dotimes (i 999)    (let ((num (format "%04d" i)))      (write-region "" nil (concat dir  num ".txt"))      (rename-file (concat dir i ".txt") (concat dir num ".txt")))))
+Wrong type argument: sequencep, 0ls
+ls
+ls
+rm *.txt
+ls
+(let ((dir "~/Documents/shellgei160/qdata/3/lisp_code/"))  (dotimes (i 1000)    (let ((num (1+ i)))      (write-region "" nil (concat dir (number-to-string num) ".txt")))))
+ls
+(let ((dir "~/Documents/shellgei160/qdata/3/lisp_code/"))  (dotimes (i 999)    (let ((num (format "%03d" (1+ i))))      (write-region "" nil (concat dir "file_" num ".txt"))      (rename-file (concat dir "file_" num ".txt") (concat dir "new_file_" num ".txt")))))m ".txt"))      (rename-file (concat dir "file_" num ".txt") (concat dir "new_file_" num ".txt"))      (setq n (1+ n)))))
+la
+ls
+(let ((dir "~/Documents/shellgei160/qdata/3/lisp_code/"))  (dotimes (i 999)    (let ((num (format "%03d" (1+ i))))      (write-region "" nil (concat dir "file_" num ".txt"))      (rename-file (concat dir "file_" num ".txt") (concat dir "new_file_" num ".txt")))))m ".txt"))      (rename-file (concat dir "file_" num ".txt") (concat dir "new_file_" num ".txt"))      (setq n (1+ n)))))
+(defun extract-string-from-file (file-name search-string)  "Extracts lines containing the specified search string from the given file."  (let ((result '()))    (with-temp-buffer	  (goto-char (point-min))      (insert-file-contents file-name)      (while (re-search-forward search-string nil t)        (push (thing-at-point 'line t) result)))    (reverse result)))
+dmesg
+lsusb
+dmesg 
+dmesg 
+exit
+top
+top
+top
+neofetch
+top
+pwsh
+ipython
+exit
+top
+ipython
+exit

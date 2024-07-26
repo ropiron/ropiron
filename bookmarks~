@@ -4,8 +4,7 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/.emacs.d/org-dir/memo.org")
- (front-context-string . "**  [2023-01-04 ")
- (rear-context-string . "odeでDoingの項目を作る\n")
- (position . 116)
- (last-modified 25525 41859 604467 661000))
+ (front-context-string . "**  [2023-09-16 ")
+ (rear-context-string . "らないと\n早く会社に行かないと\n")
+ (position . 552))
 )

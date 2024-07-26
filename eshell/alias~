@@ -1,0 +1,6 @@
+alias nil  $*
+alias (if (file-exists-p png-file)
+        (message "File %s already exists." png-file)
+      (shell-command (format "convert %s %s" file png-file))
+      (message "Converted %s to %s." file png-file))))  $*
+alias (message "Converted %s to %s." file png-file))))  $*

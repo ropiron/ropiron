@@ -4,8 +4,7 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
  (filename . "~/.emacs.d/org-dir/idea.org")
- (front-context-string . "**  [2023-01-05 ")
- (rear-context-string . "on 14:35] \naaaa\n")
- (position . 41)
- (last-modified 25525 41951 587389 592000))
+ (front-context-string . "**  [2023-12-29 ")
+ (rear-context-string . "追加\n- ビリヤニのシーフード\n")
+ (position . 1111))
 )

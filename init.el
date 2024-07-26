@@ -355,5 +355,20 @@
 (setq-default mode-line-mule-info
               (cl-substitute '(:eval (my-buffer-coding-system-mnemonic))
                              "%z" mode-line-mule-info :test 'equal))
+
+(setq eshell-visual-commands
+  '("vi"                                ; what is going on??
+    "screen" "top"                      ; ok, a valid program...
+    "less" "more"                       ; M-x view-file
+    "lynx" "ncftp"                      ; w3.el, ange-ftp
+    "pine" "tin" "trn" "elm")           ; GNUS!!
+  )
+
+(require 'em-term)
+(defun eshell-exec-visual (&rest args)
+  (apply 'start-process
+         "eshell-exec-visual" " eshell-exec-visual"
+         "urxvt" "-title" "eshell-exec-visual" "-e" args)
+  nil)
 ;; OS起動後Org-captureを実行する。
-(org-capture)
+;;(org-capture)
